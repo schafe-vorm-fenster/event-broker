@@ -8,7 +8,7 @@ on:
       - completed
 
 jobs:
-  Check:
+  API-Tests:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,4 +19,4 @@ jobs:
           cache: "yarn"
           cache-dependency-path: "yarn.lock"
       - run: yarn install --frozen-lockfile
-      - run: test:e2e
+      - run: yarn test:e2e
