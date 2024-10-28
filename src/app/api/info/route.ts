@@ -1,13 +1,13 @@
 // next js app router GET api route handler
 
 import { createNextHandler } from "@ts-rest/serverless/next";
-import { HealthContract } from "./health.contract";
 import packageJson from "../../../../package.json" assert { type: "json" };
+import { InfoContract } from "./info.contract";
 
 const handler = createNextHandler(
-  HealthContract,
+  InfoContract,
   {
-    health: async () => {
+    info: async () => {
       return {
         status: 200,
         body: {
