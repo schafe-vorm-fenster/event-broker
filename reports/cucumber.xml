@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<testsuite failures="0" skipped="0" name="cucumber-js" time="1.1716630749999999" tests="3">
+  <testcase classname="Manage Posts on JSONPlaceholder API" name="Retrieve a list of posts" time="0.809288747">
+    <system-out><![CDATA[Given I am a user.........................................................passed
+When I send a GET request to /posts.......................................passed
+Then the API should respond with status code 200..........................passed
+And the response should contain an array of posts.........................passed]]></system-out>
+  </testcase>
+  <testcase classname="Manage Posts on JSONPlaceholder API" name="Create a new post" time="0.231531458">
+    <system-out><![CDATA[Given I am a user.........................................................passed
+When I send a POST request to /posts......................................passed
+Then the API should respond with status code 201..........................passed
+And the response should contain the post object...........................passed]]></system-out>
+  </testcase>
+  <testcase classname="Manage Posts on JSONPlaceholder API" name="Retrieve a specific post" time="0.13084287000000003">
+    <system-out><![CDATA[Given I am a user.........................................................passed
+When I send a GET request to /posts/1.....................................passed
+Then the API should respond with status code 200..........................passed
+And the response should contain the details of the post...................passed]]></system-out>
+  </testcase>
+</testsuite>
