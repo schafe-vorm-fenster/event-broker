@@ -4,7 +4,7 @@ import { createNextHandler } from "@ts-rest/serverless/next";
 import { HealthContract } from "./health.contract";
 import packageJson from "../../../../package.json" assert { type: "json" };
 
-export const handler = createNextHandler(
+const handler = createNextHandler(
   HealthContract,
   {
     health: async () => {
