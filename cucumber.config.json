@@ -1,0 +1,11 @@
+{
+  "default": {
+    "parallel": 2,
+    "format": [
+      "html:reports/cucumber.html",
+      "json:reports/cucumber.json",
+      "junit:reports/cucumber.xml"
+    ]
+  },
+  "paths": ["features"]
+}
