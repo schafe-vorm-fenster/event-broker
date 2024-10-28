@@ -1,10 +1,11 @@
-name: Check and Build
+name: API Tests
 
 on:
-  push:
-    branches: ["main"]
-  pull_request:
-    branches: ["main"]
+  workflow_run:
+    workflows: ["Production Deployment"]
+    branches: [main]
+    types:
+      - completed
 
 jobs:
   Check:
