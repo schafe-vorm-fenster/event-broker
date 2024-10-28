@@ -11,6 +11,8 @@ jobs:
   API-Tests:
     runs-on: ubuntu-latest
 
+    environment: ${{ vars.API_BASE_URL }}
+
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
