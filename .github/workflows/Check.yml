@@ -1,4 +1,4 @@
-name: Validate Next JS
+name: Check and Build
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: ["main"]
 
 jobs:
-  build:
+  Check:
     runs-on: ubuntu-latest
 
     steps:

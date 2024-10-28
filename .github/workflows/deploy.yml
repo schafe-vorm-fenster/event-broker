@@ -1,14 +1,16 @@
-name: Vercel Production Deployment
+name: Production Deployment
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 on:
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows: ["Check and Build"]
+    branches: [main]
+    types:
+      - completed
 
 jobs:
-  Check:
+  Build:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: true
@@ -27,7 +29,7 @@ jobs:
         run: yarn build
 
   Deployment:
-    needs: Check
+    needs: Build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
