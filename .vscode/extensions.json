@@ -3,6 +3,7 @@
     "grayhat.v0",
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
-    "github.vscode-github-actions"
+    "github.vscode-github-actions",
+    "iteratec.bdd-power-tools"
   ]
 }
