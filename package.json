@@ -3,12 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "description": "The event borker is a service that manages the import and update of events.",
+  "homepage": "https://event-broker.api.schafe-vorm-fenster.de/",
+  "bugs": {
+    "url": "https://github.com/schafe-vorm-fenster/event-broker/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/schafe-vorm-fenster/event-broker"
+  },
+  "author": {
+    "name": "Schafe vorm Fenster UG",
+    "email": "jan@schafe-vorm-fenster.de"
+  },
   "scripts": {
     "build": "next build",
-    "dev": "next dev --turbopack -p 8700",
+    "dev": "next dev --turbo -p 8700",
     "lint": "next lint",
     "start": "next start",
-    "test:e2e": "cucumber-js --config cucumber.config.json"
+    "test:api": "cucumber-js --config cucumber.config.json"
   },
   "dependencies": {
     "@ts-rest/core": "^3.51.0",
@@ -16,26 +28,28 @@
     "axios": "^1.7.7",
     "dotenv": "^16.4.5",
     "mongoose": "^8.7.3",
-    "next": "15.0.1",
-    "react": "19.0.0-rc-69d4b800-20241021",
-    "react-dom": "19.0.0-rc-69d4b800-20241021",
+    "next": "14.2.16",
+    "react": "^18",
+    "react-dom": "^18",
+    "swagger-ui-react": "^5.17.9",
     "zod": "^3.23.8"
   },
   "devDependencies": {
     "@cucumber/cucumber": "^11.0.1",
     "@ts-rest/serverless": "^3.51.0",
     "@types/jest": "^29.5.14",
-    "@types/node": "^22.8.1",
-    "@types/react": "npm:types-react@rc",
-    "@types/react-dom": "npm:types-react-dom@rc",
+    "@types/node": "20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
     "@types/supertest": "^6.0.2",
-    "eslint": "^9.13.0",
-    "eslint-config-next": "15.0.1",
+    "@types/swagger-ui-react": "^4.18.3",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.16",
     "jest": "^29.5.0",
     "supertest": "^7.0.0",
     "ts-jest": "^29.2.5",
     "tslib": "^2.8.0",
-    "typescript": "^5.6.3"
+    "typescript": "^5"
   },
   "engines": {
     "node": "20.x"
