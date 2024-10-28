@@ -1,7 +1,8 @@
 {
-    "recommendations": [
-        "grayhat.v0",
-        "dbaeumer.vscode-eslint",
-        "esbenp.prettier-vscode"
-    ]
+  "recommendations": [
+    "grayhat.v0",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "github.vscode-github-actions"
+  ]
 }
