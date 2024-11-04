@@ -16,3 +16,7 @@ The event broker is implemented as a next js api service.
 - Mongoose
 - Supertest, cucumber, jest
 - Vercel cron jobs
+
+## Enhancements
+
+Maybe integrate <https://github.com/harver-engineering/bat> to use predefined rest steps

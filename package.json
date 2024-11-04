@@ -2,7 +2,7 @@
   "name": "event-broker",
   "version": "0.1.0",
   "private": true,
-  "description": "The event borker is a service that manages the import and update of events.",
+  "description": "The event broker is a service that manages the import and update of events.",
   "homepage": "https://event-broker.api.schafe-vorm-fenster.de/",
   "bugs": {
     "url": "https://github.com/schafe-vorm-fenster/event-broker/issues"
