@@ -9,17 +9,20 @@ import {
   ServiceStatusSchema,
   UnhealthyApiStatusSchema,
 } from "@/src/rest/health.schema";
+import { getEventsApiHealth } from "@/src/api-clients/events-api/events-api.health";
 
 const handler = createNextHandler(
   HealthContract,
   {
     health: async () => {
       const calenderApiHealth: ServiceStatusSchema =
-        (await getCalendarApiHealth()) as ServiceStatusSchema;
+        await getCalendarApiHealth();
+
+      const eventsApiHealth: ServiceStatusSchema = await getEventsApiHealth();
 
       // evaluate overall status code
       let status: number = 200;
-      if (calenderApiHealth.status !== 200) {
+      if (calenderApiHealth.status !== 200 || eventsApiHealth.status !== 200) {
         status = 503;
       }
 
@@ -29,7 +32,7 @@ const handler = createNextHandler(
           version: packageJson.version,
           name: packageJson.name,
           description: packageJson.description,
-          services: [calenderApiHealth],
+          services: [calenderApiHealth, eventsApiHealth],
         };
         return { status: 200, body: apiStatus };
       }
@@ -43,7 +46,7 @@ const handler = createNextHandler(
         version: packageJson.version,
         name: packageJson.name,
         description: packageJson.description,
-        services: [calenderApiHealth],
+        services: [calenderApiHealth, eventsApiHealth],
       };
       return { status: 503, body: apiStatus };
     },

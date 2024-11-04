@@ -1,13 +1,14 @@
 import { ResultSchema } from "@/src/rest/result.schema";
 import { z } from "zod";
-const CalendarSctionResultSchema = ResultSchema.extend({
+const CalendarActionResultSchema = ResultSchema.extend({
   calendarId: z.string(),
 });
 
-export const CalendarActionSuccessfulSchema = CalendarSctionResultSchema.extend(
+export const CalendarActionSuccessfulSchema = CalendarActionResultSchema.extend(
   {
     status: z.number().min(200).max(201),
     results: z.number().min(1),
+    data: z.array(z.object({})),
   }
 );
 

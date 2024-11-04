@@ -6,6 +6,7 @@ import {
   CalendarImportNotModifiedSchema,
   CalendarImportSuccessfulSchema,
 } from "../calendar-import.schema";
+import { getCalendarApiEvents } from "@/src/api-clients/calendar-api/calendar-api.events";
 
 const handler = createNextHandler(
   CalendarImportByIdContract,
@@ -66,15 +67,19 @@ const handler = createNextHandler(
           "fs5r0j9thgru6jto0d3pnnemo49pd36l@import.calendar.google.com" &&
         (from || to)
       ) {
+        const events = await getCalendarApiEvents({
+          calendarId: calendarId,
+        });
         return {
           status: 200,
           body: {
             status: 200,
             calendarId: calendarId,
-            results: 51,
+            results: events.length,
             timestamp: "2024-12-31T23:59:59.999Z",
             from: from,
             to: to,
+            data: events,
           } as CalendarImportSuccessfulSchema,
         };
       }
@@ -84,6 +89,10 @@ const handler = createNextHandler(
         calendarId ===
         "fs5r0j9thgru6jto0d3pnnemo49pd36l@import.calendar.google.com"
       ) {
+        const events = await getCalendarApiEvents({
+          calendarId: calendarId,
+        });
+
         return {
           status: 200,
           body: {
@@ -91,6 +100,7 @@ const handler = createNextHandler(
             calendarId: calendarId,
             results: 89,
             timestamp: "2024-12-31T23:59:59.999Z",
+            data: events,
           } as CalendarImportSuccessfulSchema,
         };
       }
